@@ -17,4 +17,5 @@ Rails.application.routes.draw do
   get '/users',      to: 'users#index'
 
   resources :users
+  resources :account_activations, only: [:edit]
 end
