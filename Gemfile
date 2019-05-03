@@ -13,8 +13,10 @@ end
 gem 'rails', '~> 5.1.6'
 gem 'bcrypt'
 gem 'faker'
-gem 'will_paginate' 
+gem 'will_paginate'
 gem 'bootstrap-will_paginate'
+gem 'carrierwave',             '1.2.2'
+gem 'mini_magick',             '4.7.0'
 gem 'jquery-rails'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
@@ -33,7 +35,7 @@ gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
-
+gem 'fog', '1.42'
 gem 'bootstrap-sass'
 gem 'rails-controller-testing'
 # Use Redis adapter to run Action Cable in production
