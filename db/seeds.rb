@@ -19,7 +19,9 @@ User.create!(name:  "Example User",
 end
 
 users = User.order(:created_at).take(6)
-50.times do
+50.times do |num|
   content = Faker::Lorem.sentence(5)
-  users.each { |user| user.microposts.create!(content: content) }
+  title = "Title #{num+1}"
+  num = num+1
+  users.each { |user| user.microposts.create!(content: content,title: title) }
 end

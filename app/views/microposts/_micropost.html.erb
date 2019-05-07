@@ -2,8 +2,12 @@
   <%= link_to gravatar_for(micropost.user, size: 50), micropost.user %>
   <span class="user"><%= link_to micropost.user.name, micropost.user %></span>
   <span class="content">
-    <%= micropost.content %>
+    <%= micropost.title %>
     <%= image_tag micropost.picture.url if micropost.picture? %>
+    <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#<%=micropost.id%>" >Show/Hide</button>
+    <div id="<%=micropost.id%>" class="collapse">
+      <%= micropost.content %>
+    </div>
   </span>
   <span class="timestamp">
     Posted <%= time_ago_in_words(micropost.created_at) %> ago.
