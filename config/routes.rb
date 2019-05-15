@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+
+  namespace 'api' do
+    namespace 'v1' do
+      resources :microposts
+    end
+  end
+
   get 'sessions/new'
 
   get 'users/new'
@@ -18,5 +25,10 @@ Rails.application.routes.draw do
 
   resources :users
   resources :account_activations, only: [:edit]
+  #Module :api do
+  #  Module :v1 do
+  #    Resources :microposts
+  #  end
+  #end
   resources :microposts,          only: [:create, :destroy]
 end
