@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
 
-  namespace 'api' do
-    namespace 'v1' do
-      resources :microposts
-    end
-  end
+  #namespace 'api' do
+  #  namespace 'v1' do
+  #    resources :microposts
+  #  end
+  #end
 
   get 'sessions/new'
 
@@ -30,5 +30,6 @@ Rails.application.routes.draw do
   #    Resources :microposts
   #  end
   #end
-  resources :microposts,          only: [:create, :destroy]
+  resources :microposts#,          only: [:create, :destroy, :edit]
+  #post '/microposts/:id/edit', to: 'microposts#edit'
 end

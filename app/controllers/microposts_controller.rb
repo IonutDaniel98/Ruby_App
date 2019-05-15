@@ -24,6 +24,23 @@ class MicropostsController < ApplicationController
     end
   end
 
+  def edit
+    @micropost=Micropost.find(params[:id])
+  end
+
+  def update
+    #byebug
+    @micropost=Micropost.find(params[:id])
+    @micropost.update_attributes(micropost_params)
+    if @micropost.errors.empty?
+      flash[:success] = "Micropost edited"
+      #redirect_to request.referrer || root_url
+      #redirect_to 'static_pages/home'
+    else
+      render 'microposts/edit'
+    end
+  end
+
   private
 
     def micropost_params
