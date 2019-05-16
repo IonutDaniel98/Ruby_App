@@ -34,9 +34,11 @@ class MicropostsController < ApplicationController
     @micropost.update_attributes(micropost_params)
     if @micropost.errors.empty?
       flash[:success] = "Micropost edited"
-      #redirect_to request.referrer || root_url
+      redirect_to root_url
       #redirect_to 'static_pages/home'
+      #render 'static_pages/home'
     else
+      flash[:errors] = "Not succes edit"
       render 'microposts/edit'
     end
   end
